@@ -36,7 +36,7 @@ python3 main.py
 
 ## Examples
 ### Making a cog:
-We use the `disnake.ext.plugins` module to create a plugin for the bot. This defeates the purpose of having to make a class for each Cog and is way simplified.
+This template uses [`disnake.ext.plugins`](https://github.com/DisnakeCommunity/disnake-ext-plugins) to nicely split bot's functionality into multiple files. Plugins are conceptually similar to cogs, but offer a simplified interface and don't rely on various hacks that cogs use internally.
 ```python
 import disnake
 
