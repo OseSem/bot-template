@@ -16,7 +16,7 @@ jobs:
         with:
           extra_args: --all-files
 
-  check_typing:
+  pyright:
     runs-on: ubuntu-latest
     strategy:
       matrix:
