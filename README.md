@@ -58,7 +58,7 @@ setup, teardown = plugin.create_extension_handlers()
 
 ```
 
-### Using localization: 
+### Using localization:
 Our template utilizated disnake's built-in i18n with our own small function that formats them with the arguments provided.
 ```python
 plugin.bot.localization.get(
