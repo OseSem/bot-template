@@ -159,15 +159,19 @@ cython_debug/
 #  option (not recommended) you can uncomment the following to ignore the entire idea folder.
 .idea/
 
+# VSCode
+.vscode/settings.json
+
 # ruff
 .ruff_cache
+
+# Json & Log
+
+*.json
+*.log*
 
 # Lang
 !src/lang/
 !src/lang/*.json
 
 # Custom
-
-*.json
-*.log*
-.vscode/settings.json
