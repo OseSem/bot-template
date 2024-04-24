@@ -164,6 +164,7 @@ cython_debug/
 
 # Lang
 !src/lang/*.json
+!src/lang
 
 # Custom
 
