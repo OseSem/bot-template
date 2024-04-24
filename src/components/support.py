@@ -2,7 +2,7 @@ from __future__ import annotations
 
 import disnake
 
-from communitybot.constants import Client, Emoji
+from src.constants import Client, Emoji
 
 
 class SupportInvite(disnake.ui.Button[None]):
@@ -14,6 +14,6 @@ class SupportInvite(disnake.ui.Button[None]):
     def __init__(self) -> None:
         super().__init__(
             style=disnake.ButtonStyle.url,
-            emoji=Emoji.thera_nobg,
+            emoji=Emoji.support,
             url=f"https://discord.gg/{Client.support_server_code}",
         )

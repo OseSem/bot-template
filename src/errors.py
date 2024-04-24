@@ -1,6 +1,15 @@
-from communitybot import log
+from src import log
 
 logger = log.get_logger(__name__)
+
+__all__ = (
+    "BaseBotError",
+    "GeneralHTTPError",
+)
+
+
+class BaseBotError(Exception):
+    """Base bot error all custom errors inherit from."""
 
 
 class GeneralHTTPError(Exception):
