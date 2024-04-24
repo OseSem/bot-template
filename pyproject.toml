@@ -5,13 +5,17 @@ description = "A basic template for a discord bot with disnake."
 authors = ["OseSem"]
 license = "MIT"
 readme = "README.md"
+repository = "https://github.com/OseSem/bot-template"
+
+package-mode = false
 
 [tool.poetry.dependencies]
 python = "^3.10"
 disnake = "^2.9.1"
-disnake-ext-plugins = "^0.0.0a0"
+disnake-ext-plugins = {git = "https://github.com/disnakecommunity/disnake-ext-plugins", rev = "master"}
 coloredlogs = "^15.0.1"
 psutil = "^5.9.8"
+helply = {git = "https://github.com/dlchamp/helply", rev = "main"}
 tabulate = "^0.9.0"
 humanfriendly = "^10.0"
 
@@ -26,6 +30,8 @@ pre-commit = "^3.7.0"
 requires = ["poetry-core"]
 build-backend = "poetry.core.masonry.api"
 
+
+
 [tool.poetry.group.lint.dependencies]
 disnake = "^2.9.1"
 
@@ -39,7 +45,6 @@ profile = "black"
 
 [tool.ruff]
 line-length = 100
-exclude = ["alembic"]
 select = ["ALL"]
 ignore = [
     "ERA001", # commented out code.

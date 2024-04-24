@@ -1,4 +1,4 @@
-from communitybot import log
+from src import log
 
 logger = log.get_logger(__name__)
 

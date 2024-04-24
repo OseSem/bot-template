@@ -1,2 +1,70 @@
-# bot-template
-A basic template for a discord bot with disnake.
+# Basic Bot Template
+
+<div style="text-align: center;">
+
+![GitHub Issues or Pull Requests](https://img.shields.io/github/issues/OseSem/bot-template)
+![GitHub License](https://img.shields.io/github/license/OseSem/bot-template)
+![GitHub commit activity](https://img.shields.io/github/commit-activity/w/OseSem/bot-template)
+
+</div>
+
+This is a basic bot template for the [Discord API](https://discord.com/developers/docs/intro) using [disnake](https://docs.disnake.dev).
+
+
+## Key Features
+- Neat packaging control.
+- Workflows for linting.
+- Basic bot setup.
+
+## Getting Started
+1. Clone the template ***[here](https://github.com/new?template_name=bot-template&template_owner=OseSem)***.
+2. Installing the dependencies: (Remove `--without dev` if you want to install dev dependencies)
+```bash
+python3 -m pip install poetry
+poetry install
+```
+3. Create a `.env` file in the root directory and add the following:
+```env
+TOKEN=YOUR_BOT_TOKEN
+```
+4. Update version and title in `pyproject.toml` and `src/__init__.py`.
+5. Run the bot: (Run `exit` to exit the shell.`)
+```bash
+poetry shell
+python3 main.py
+```
+
+## Examples
+### Making a cog:
+We use the `disnake.ext.plugins` module to create a plugin for the bot. This defeates the purpose of having to make a class for each Cog and is way simplified.
+```python
+import disnake
+
+from disnake.ext import plugins as p
+from src.bot import Bot
+
+plugin = p.Plugin[Bot]()
+
+@plugin.slash_command()
+async def example_command(_: disnake.CommandInteraction) -> None:
+    """Example Command Parent Interaction"""
+
+@example.sub_command(name="ping")
+async def example_ping(inter: disnake.CommandInteraction):
+    """Ping, Pong! [USAGE: /example ping]."""
+    await inter.response.send_message("Pong!")
+
+setup, teardown = plugin.create_extension_handlers()
+
+```
+
+### Using localization: 
+Our template utilizated disnake's built-in i18n with our own small function that formats them with the arguments provided.
+```python
+plugin.bot.localization.get(
+    "{member}'s money:", # Default message if no language is found.
+    inter.locale, # The locale from the user found in the interaction
+    "BALANCE_CHECK", # The key to the translated message
+    member=member.display_name, # All formatted parameters go here.
+),
+```
