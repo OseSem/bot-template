@@ -12,10 +12,10 @@ package-mode = false
 [tool.poetry.dependencies]
 python = "^3.10"
 disnake = "^2.9.1"
-disnake-ext-plugins = {git = "https://github.com/disnakecommunity/disnake-ext-plugins", rev = "master"}
+disnake-ext-plugins = {git = "https://github.com/disnakecommunity/disnake-ext-plugins", rev = "d707e36"}
 coloredlogs = "^15.0.1"
 psutil = "^5.9.8"
-helply = {git = "https://github.com/dlchamp/helply", rev = "main"}
+helply = {git = "https://github.com/dlchamp/helply", rev = "a99f90f"}
 tabulate = "^0.9.0"
 humanfriendly = "^10.0"
 

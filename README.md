@@ -18,24 +18,25 @@ This is a basic bot template for the [Discord API](https://discord.com/developer
 
 ## Getting Started
 1. Clone the template ***[here](https://github.com/new?template_name=bot-template&template_owner=OseSem)***.
-2. Installing the dependencies: (Remove `--without dev` if you want to install dev dependencies)
+2. Changing the license and changing the version and authors in `pyproject.toml` and `src/__init__.py`.
+3. Installing the dependencies:
 ```bash
 python3 -m pip install poetry
 poetry install
 ```
-3. Create a `.env` file in the root directory and add the following:
+4. Create a `.env` file in the root directory and add the following:
 ```env
 TOKEN=YOUR_BOT_TOKEN
 ```
-4. Update version and title in `pyproject.toml` and `src/__init__.py`.
-5. Run the bot: (Run `exit` to exit the shell.`)
+5. Update version and title in `pyproject.toml` and `src/__init__.py`.
+6. Run the bot: (Run `exit` to exit the shell.`)
 ```bash
 poetry shell
 python3 main.py
 ```
 
 ## Examples
-### Making a cog:
+### Making a plugin:
 We use the `disnake.ext.plugins` module to create a plugin for the bot. This defeates the purpose of having to make a class for each Cog and is way simplified.
 ```python
 import disnake

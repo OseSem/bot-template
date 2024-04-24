@@ -67,7 +67,7 @@ class Bot(commands.AutoShardedInteractionBot):
 
         self.loop_activities.start()
 
-    @tasks.loop(seconds=5)
+    @tasks.loop(minutes=5)
     async def loop_activities(self) -> None:
         """Loop between activities."""
         if constants.Client.activities:

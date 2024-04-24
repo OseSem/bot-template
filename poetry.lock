@@ -274,7 +274,7 @@ disnake = "^2.0"
 [package.source]
 type = "git"
 url = "https://github.com/disnakecommunity/disnake-ext-plugins"
-reference = "master"
+reference = "d707e36"
 resolved_reference = "d707e36ef95f4a5be62812b9013d6cd61a7a4d8a"
 
 [[package]]
@@ -402,7 +402,7 @@ develop = false
 [package.source]
 type = "git"
 url = "https://github.com/dlchamp/helply"
-reference = "main"
+reference = "a99f90f"
 resolved_reference = "a99f90f9a1f09633be9a54b65cbdabdcaee0ab36"
 
 [[package]]
@@ -955,4 +955,4 @@ multidict = ">=4.0"
 [metadata]
 lock-version = "2.0"
 python-versions = "^3.10"
-content-hash = "cb73c4b4ad356b04143d354a47f001b3717470e2a533e773a49e910cc41cbc04"
+content-hash = "fbba5957a00e86fd69d36d5efcb6191a9d7ccfc62ffed6b1b8337b50ef82c3a6"
