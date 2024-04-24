@@ -2,6 +2,7 @@
 
 <div style="text-align: center;">
 
+![GitHub Actions Workflow Status](https://img.shields.io/github/actions/workflow/status/OseSem/bot-template/ci.yml)
 ![GitHub Issues or Pull Requests](https://img.shields.io/github/issues/OseSem/bot-template)
 ![GitHub License](https://img.shields.io/github/license/OseSem/bot-template)
 ![GitHub commit activity](https://img.shields.io/github/commit-activity/w/OseSem/bot-template)
