@@ -32,6 +32,10 @@ async def handle_trash_button(inter: disnake.MessageInteraction) -> None:
     # check if user is the allowed user OR check if the user has required permissions
     # missing permissions message sent here if user cannot delete.
     if not await has_permission_to_delete(inter, user_id, perms):
+        await inter.response.send_message(
+            "Sorry. You are not permitted to delete this message.",
+            ephemeral=True,
+        )
         return
 
     await inter.response.defer()
@@ -70,10 +74,6 @@ async def has_permission_to_delete(
     if permissions.value & user_permissions.value:
         return True
 
-    await inter.response.send_message(
-        "Sorry. You are not permitted to delete this message.",
-        ephemeral=True,
-    )
     return False
 
 
