@@ -2,9 +2,9 @@ from __future__ import annotations
 
 import asyncio
 import typing as t
-from urllib.parse import quote as _uriquote
 
 import aiohttp
+import yarl
 
 from src import errors, log
 
@@ -49,10 +49,8 @@ class Route:
     def __init__(self, method: str, url: str, **params: int | str | bool) -> None:
         self.method = method
 
-        if params:
-            url += "?"
-            url += "&".join({f"{k}={_uriquote(str(v))}" for k, v in params.items()})
-        self.url = url
+        new_url: yarl.URL = yarl.URL(url).with_query(params)
+        self.url: str = new_url.human_repr()
 
 
 class APIHTTPClient:

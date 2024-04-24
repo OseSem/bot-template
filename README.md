@@ -29,7 +29,7 @@ poetry install
 TOKEN=YOUR_BOT_TOKEN
 ```
 5. Update version and title in `pyproject.toml` and `src/__init__.py`.
-6. Run the bot: (Run `exit` to exit the shell.`)
+6. Run the bot: (Run `exit` to exit the shell.)
 ```bash
 poetry shell
 python3 main.py
@@ -47,11 +47,11 @@ from src.bot import Bot
 plugin = p.Plugin[Bot]()
 
 @plugin.slash_command()
-async def example_command(_: disnake.CommandInteraction) -> None:
-    """Example Command Parent Interaction"""
+async def example(_: disnake.CommandInteraction) -> None:
+    """Parent Interaction Example."""
 
 @example.sub_command(name="ping")
-async def example_ping(inter: disnake.CommandInteraction):
+async def example_ping(inter: disnake.CommandInteraction) -> None:
     """Ping, Pong! [USAGE: /example ping]."""
     await inter.response.send_message("Pong!")
 
