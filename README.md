@@ -32,7 +32,7 @@ TOKEN=YOUR_BOT_TOKEN
 6. Run the bot: (Run `exit` to exit the shell.)
 ```bash
 poetry shell
-python3 main.py
+python main.py
 ```
 
 ## Examples
