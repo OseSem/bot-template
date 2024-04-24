@@ -1,0 +1,59 @@
+[tool.poetry]
+name = "bot-template"
+version = "0.1.0"
+description = "A basic template for a discord bot with disnake."
+authors = ["OseSem"]
+license = "MIT"
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.10"
+disnake = "^2.9.1"
+disnake-ext-plugins = "^0.0.0a0"
+coloredlogs = "^15.0.1"
+psutil = "^5.9.8"
+tabulate = "^0.9.0"
+humanfriendly = "^10.0"
+
+[tool.poetry.group.dev.dependencies]
+python-dotenv = "^1.0.0"
+isort = "^5.13.2"
+ruff = "^0.4.1"
+black = "^24.4.0"
+pre-commit = "^3.7.0"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.poetry.group.lint.dependencies]
+disnake = "^2.9.1"
+
+[tool.black]
+line-length = 100
+target-version = ["py310"]
+
+[tool.isort]
+profile = "black"
+
+
+[tool.ruff]
+line-length = 100
+exclude = ["alembic"]
+select = ["ALL"]
+ignore = [
+    "ERA001", # commented out code.
+    "D100", # docstrings in public modules.
+    "D104", # docstrings in public package.
+    "G004", # f-string in logger message.
+    "ANN101", # self type hint.
+]
+
+[tool.ruff.per-file-ignores]
+"src/constants.py" = [
+    "RUF012", # mutable class attr
+    "S105", # hardcoded passwords, it's not.
+]
+
+[tool.ruff.pydocstyle]
+convention = "numpy"
